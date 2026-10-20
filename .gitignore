@@ -1,0 +1,32 @@
+# Rust build outputs and packaged binaries
+/target/
+/dist/
+**/*.rs.bk
+*.pdb
+
+# Local diagnostics and logs
+/diagnostics.txt
+*.log
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Editor state and temporary files
+/.idea/
+/.vs/
+/.vscode/
+*.swp
+*.swo
+*~
+
+# Operating system metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Cargo.lock is intentionally tracked for reproducible application builds.
+# .cargo/config.toml is intentionally tracked for the Windows linker settings.
+

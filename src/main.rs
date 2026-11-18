@@ -212,7 +212,10 @@ impl eframe::App for ReceiverApp {
         ctx.request_repaint_after(Duration::from_millis(250));
         egui::CentralPanel::default().show(ctx, |ui| {
             ui.add_space(18.0);
-            ui.heading(egui::RichText::new("Bluetooth Receiver").size(28.0));
+            ui.horizontal(|ui| {
+                ui.heading(egui::RichText::new("Bluetooth Receiver").size(28.0));
+                ui.weak(concat!("v", env!("CARGO_PKG_VERSION")));
+            });
             ui.label("Your phone’s audio. Your PC’s speakers.");
             ui.add_space(22.0);
             ui.horizontal(|ui| {

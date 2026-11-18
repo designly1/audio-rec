@@ -18,6 +18,7 @@ All notable changes to this project are documented here. The format follows
   - A longer silence counts as a pause.
   - Windows does not expose A2DP packet loss or signal strength, so this is an estimate.
   - Nothing is recorded or stored.
+- The app version now appears next to the window heading.
 - Unit tests for dropout detection and the rating thresholds, plus an ignored smoke test that opens a real loopback stream.
 
 ### Changed

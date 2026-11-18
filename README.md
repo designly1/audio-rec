@@ -55,5 +55,16 @@ responsive. The worker retains the receiver connection, checks its actual Window
 state, and closes it on disconnect or shutdown. It never reads the connection's
 `DeviceId` property; discovery provides the device ID instead.
 
+## Connection quality
+
+While connected, the app shows a **Connection quality** panel with a Good / Fair /
+Poor rating, an output level meter, uptime, audio dropouts (last minute and this
+session), and link drops and reconnects. Windows does not expose Bluetooth packet
+loss or signal strength for A2DP sinks. So dropouts are estimated from a WASAPI
+loopback capture of the default output: a 20 ms to 1 s silence in the middle of
+playing audio counts as a dropout, and longer silences count as pauses. Sounds
+from other apps on the same output can affect the estimate. Nothing is recorded
+or stored. Link drops come from the connection state that Windows reports.
+
 Windows API reference:
 [Enable audio playback from remote Bluetooth devices](https://learn.microsoft.com/en-us/windows/uwp/audio-video-camera/enable-remote-audio-playback).
